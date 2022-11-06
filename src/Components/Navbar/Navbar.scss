@@ -1,0 +1,24 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // background-color:  #0058cc;
+    color: #0b2434;
+    padding: 10px 6%;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.navbar--links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar--links li {
+    text-decoration: none;
+    margin: 0 10px;
+}

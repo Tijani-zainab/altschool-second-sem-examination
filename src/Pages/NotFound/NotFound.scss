@@ -1,0 +1,22 @@
+.not-found-page {
+    margin: 0 auto;
+    padding: 10% 8% 10% 7.5%;
+    color: #fff;
+    text-align: center;
+}
+
+.not-found-desc {
+    -webkit-box-shadow: 1px 3px 21px -2.5px #dddddd;
+    -moz-box-shadow: 1px 3px 21px -2.5px #dddddd;
+    box-shadow: 1px 3px 21px -2.5px #dddddd;
+    padding: 30px 40px;
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+}
+
+
+@media (max-width: 768px) {
+    .not-found-page {
+        padding: 3% 8% 50px 7.5%;
+    }
+}

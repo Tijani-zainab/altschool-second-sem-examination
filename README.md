@@ -1,6 +1,6 @@
-### Project Name: AltSchool Second Semester Examination Project
+## Project Name: AltSchool Second Semester Examination Project
 
-## Description
+### Description
 
 This project is a simple web portfolio that fetches projects portfolio from Github API. The application is built using the React JS framework and SASS. The application is deployed on Netlify and can be accessed at:
 

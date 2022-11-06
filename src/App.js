@@ -1,13 +1,16 @@
 import './App.scss';
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import { Portfolio } from "././Pages";
 
 function App() {
   return (
-    <ErrorBoundary>
+    
       <div className="App">
-        <h1> Landing App </h1>
+        <ErrorBoundary>
+          <Portfolio />
+        </ErrorBoundary>
       </div>
-    </ErrorBoundary>
+    
   );
 }
 
