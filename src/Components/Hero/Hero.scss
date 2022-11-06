@@ -2,19 +2,13 @@
     color: #0b2434;
     height: auto;
     text-align: center;
+    height: 100vh;
 }
 
 .hero-main--top {
     align-items: center;
     justify-content: center;
     padding: 13% 10% 2% 10%;
-}
-
-.project-description {
-    align-items: center;
-    justify-content: center;
-    padding: 13% 17% 10% 17%;
-    letter-spacing: 2px;
 }
 
 .btn {
@@ -32,16 +26,13 @@
 
 
 @media screen and (max-width: 768px) {
+
+    .hero {
+        height: auto;
+    }
+
     .hero-main--top{
         padding: 13% 10% 2% 10%;
-    }
-
-    .project-description {
-        padding: 13% 10% 10% 10%;
-    }
-
-    .project-description h1 {
-        font-size: 1.6rem;
     }
 
     .btn {

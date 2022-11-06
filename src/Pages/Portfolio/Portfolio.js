@@ -1,11 +1,12 @@
 import './Portfolio.scss';
-import { Navbar, Hero } from "../../Components";
+import { Navbar, Hero, Projects } from "../../Components";
 
 const Portfolio = () => {
     return (
         <div className='portfolio'>
             <Navbar />
             <Hero />
+            <Projects />
         </div>
     );
 };
