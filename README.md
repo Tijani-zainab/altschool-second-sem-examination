@@ -4,7 +4,7 @@
 
 This project is a simple web portfolio that fetches projects portfolio from Github API. The application is built using the React JS framework and SASS. The application is deployed on Netlify and can be accessed at:
 
-[see at ](https://alt-school-second-semester-exam.netlify.app/)
+[see at ](https://github-generated-portfolio.netlify.app/)
 
 ## Overview
 
