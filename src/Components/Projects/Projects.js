@@ -54,6 +54,8 @@ const Projects = () => {
 
             <div className='projects--main'>
                 {githubRepo}     
+                <button className='btn prev-btn'> Prev </button>
+                <button className='btn next-btn'> Next </button>
             </div>
 
             <div className='projects-bottom'>
