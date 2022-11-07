@@ -19,6 +19,7 @@ const Projects = () => {
                 <div className='repo'>
                     <h1>{repo.name}</h1>
                     <p>{repo.description}</p>
+                    <a href={repo.html_url} target='_blank' rel='noreferrer'>View Repo</a>
                 </div>
             );
         });
@@ -52,7 +53,7 @@ const Projects = () => {
             </p>
 
             <div className='projects--main'>
-                {githubRepo}    
+                {githubRepo}     
             </div>
 
             <div className='projects-bottom'>

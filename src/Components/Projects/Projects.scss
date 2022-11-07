@@ -1,3 +1,13 @@
+.repo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 10px;
+    border: 1px solid #0b2434;
+    border-radius: 5px;
+}
+
 .projects {
     text-align: center;
 }
@@ -9,15 +19,12 @@
     letter-spacing: 2px;
 }
 
-.projects--main {
-    display: flex;
-    // flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 1% 10px;
-    border: 1px solid #0b2434;
-    border-radius: 5px;
-}
+// .projects--main {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin: 1% 10px;
+// }
 
 .projects-bottom {
     // display: none;
@@ -48,6 +55,10 @@
     
     .project-header {
         padding: 13% 10% 10% 10%;
+    }
+
+    .projects--main {
+        flex-direction: column;
     }
 
     .project-header h1 {
