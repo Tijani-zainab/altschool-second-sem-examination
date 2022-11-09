@@ -3,9 +3,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 1% 10px;
+    margin: 0 10px;
     border: 1px solid #0b2434;
-    border-radius: 5px;
+    border-radius: 6px;
+    padding: 0 40px 20px 40px;
 }
 
 .projects {
@@ -15,7 +16,7 @@
 .project-header {
     align-items: center;
     justify-content: center;
-    padding: 0 17% 10% 17%;
+    padding: 0 17% 5% 17%;
     letter-spacing: 1px;
 }
 
@@ -24,11 +25,10 @@
     justify-content: center;
     align-items: center;
     margin: 0 10px;
-    padding: 0 17% 0 17%;
+    padding: 0 13% 3% 13%;
 }
 
 .projects-bottom {
-    // display: none;
     align-items: center;
     justify-content: center;
     padding: 5% 17% 10% 17%;
@@ -53,6 +53,10 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .repo {
+        margin: 10px 0;
+    }
     
     .project-header {
         padding: 13% 10% 10% 10%;
@@ -60,15 +64,11 @@
 
     .projects--main--top {
         flex-direction: column;
-        padding: 0 3% 0 3%;
+        padding: 0 3% 4% 3%;
     }
 
     .project-header h1 {
         font-size: 1.6rem;
-    }
-
-    .projects--main {
-        margin: 15% 10px;
     }
 
     .projects-bottom {

@@ -1,5 +1,5 @@
 import './Portfolio.scss';
-import { Navbar, Hero, Projects } from "../../Components";
+import { Navbar, Hero, Projects, Footer } from "../../Components";
 
 const Portfolio = () => {
     return (
@@ -7,6 +7,7 @@ const Portfolio = () => {
             <Navbar />
             <Hero />
             <Projects />
+            <Footer />
         </div>
     );
 };

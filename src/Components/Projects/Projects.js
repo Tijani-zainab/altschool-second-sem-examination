@@ -49,7 +49,7 @@ const Projects = () => {
 
     const handleNext = () => {
         if(githubRepo.length > 3) {
-            const diplayItems = githubRepo.slice(3, githubRepo.length) + githubRepo.slice(0, 3);
+            const diplayItems = githubRepo.slice(3, githubRepo.length);
             setDisplayRepo(diplayItems);
         } else {
             const diplayItems = githubRepo.slice(0, 3);
@@ -60,7 +60,7 @@ const Projects = () => {
 
     const handlePrev = () => {
         if(githubRepo.length > 3) {
-            const diplayItems = githubRepo.slice(0, 3) - 3;
+            const diplayItems = githubRepo.slice(0, 3);
             setDisplayRepo(diplayItems);
         } else {
             const diplayItems = githubRepo.slice(0, 3);
