@@ -19,12 +19,12 @@
     letter-spacing: 1px;
 }
 
-// .projects--main {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin: 1% 10px;
-// }
+.projects--main--top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 10px;
+}
 
 .projects-bottom {
     // display: none;
@@ -57,7 +57,7 @@
         padding: 13% 10% 10% 10%;
     }
 
-    .projects--main {
+    .projects--main--top {
         flex-direction: column;
     }
 

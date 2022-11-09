@@ -60,7 +60,9 @@ const Projects = () => {
             </p>
 
             <div className='projects--main'>
-                {loading ? <h1>Loading...</h1> : displayRepo}
+                <div className='projects--main--top'>
+                    {loading ? <h1>Loading...</h1> : displayRepo}
+                </div>
                 {/* {githubRepo}      */}
                 <button className='btn prev-btn'> Prev </button>
                 <button className='btn next-btn'> Next </button>
