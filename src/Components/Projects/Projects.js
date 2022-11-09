@@ -18,7 +18,7 @@ const Projects = () => {
                 <div className='repo'>
                     <h1>{repo.name}</h1>
                     <p>{repo.description}</p>
-                    <a href={repo.html_url} target='_blank' rel='noreferrer'>View Repo</a>
+                    <a href={repo.html_url} className='view-repo__link' target='_blank' rel='noreferrer'>View Repo</a>
                 </div>
             );
         });
