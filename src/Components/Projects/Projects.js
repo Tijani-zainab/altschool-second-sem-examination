@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 
 const Projects = () => {
 
-
     const [avater, setAvater] = useState();
     const [githubUsername, setGithubUsername] = useState();
-    const [githubRepo, setGithubRepo] = useState();
+    const [githubRepo, setGithubRepo] = useState([]);
+    const [displayRepo, setDisplayRepo] = useState();
+    const [loading, setLoading] = useState(true);
 
 
     async function getRepos() {
@@ -26,6 +27,12 @@ const Projects = () => {
 
         setGithubRepo(repos);
     }
+
+    useEffect(() => {
+         const diplayItems = githubRepo.slice(0, 3);
+            setDisplayRepo(diplayItems);
+            setLoading(false);
+    }, [githubRepo]);
 
     // getRepos();
 
@@ -53,7 +60,8 @@ const Projects = () => {
             </p>
 
             <div className='projects--main'>
-                {githubRepo}     
+                {loading ? <h1>Loading...</h1> : displayRepo}
+                {/* {githubRepo}      */}
                 <button className='btn prev-btn'> Prev </button>
                 <button className='btn next-btn'> Next </button>
             </div>
@@ -61,7 +69,7 @@ const Projects = () => {
             <div className='projects-bottom'>
                 <img className='projects-avater' src={avater} alt='avater' />
                 <h1>{githubUsername}</h1>
-                <button className='btn' onClick={githubRepo}>
+                <button className='btn'>
                     check me out 
                 </button>
             </div>
