@@ -1,0 +1,19 @@
+.reachOut {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12% 13% 9% 13%;
+}
+
+.reachout-avater {
+    width: 100%;
+    border-radius: 6px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .reachOut {
+        flex-direction: column;
+    }
+}

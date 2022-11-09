@@ -28,17 +28,6 @@
     padding: 0 13% 3% 13%;
 }
 
-.projects-bottom {
-    align-items: center;
-    justify-content: center;
-    padding: 5% 17% 10% 17%;
-}
-
-.projects-avater {
-    width: 50%;
-    border-radius: 5px;
-}
-
 .btn {
     background: #0b2434;
     border: none;
@@ -71,16 +60,9 @@
         font-size: 1.6rem;
     }
 
-    .projects-bottom {
-        padding: 0 10% 10% 10%;
-    }
-
-    .projects-avater {
-        width: 100%;
-    }
-
     .btn {
         margin: 10px 10px;
         padding: 10px 40px;
+        font-size: 0.9rem;
     }
 }

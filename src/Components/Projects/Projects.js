@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 
 const Projects = () => {
 
-    const [avater, setAvater] = useState();
-    const [githubUsername, setGithubUsername] = useState();
     const [githubRepo, setGithubRepo] = useState([]);
     const [displayRepo, setDisplayRepo] = useState();
     const [loading, setLoading] = useState(true);
@@ -68,16 +66,6 @@ const Projects = () => {
         }
     };
 
-    useEffect(() => {
-        fetch('https://api.github.com/users/tijani-zainab')
-            .then(response => response.json())
-            .then(data => {
-                setAvater(data.avatar_url);
-                setGithubUsername(data.login);
-            });
-    }, []);
-
-
     return (
         <div className='projects'>
 
@@ -93,14 +81,6 @@ const Projects = () => {
                 {/* {githubRepo}      */}
                 <button className='btn prev-btn' onClick={handlePrev}> Prev </button>
                 <button className='btn next-btn' onClick={handleNext}> Next </button>
-            </div>
-
-            <div className='projects-bottom'>
-                <img className='projects-avater' src={avater} alt='avater' />
-                <h1>{githubUsername}</h1>
-                <button className='btn'>
-                    check me out 
-                </button>
             </div>
 
         </div>
