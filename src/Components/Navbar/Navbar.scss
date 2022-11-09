@@ -20,7 +20,17 @@
     margin: 0 10px;
 }
 
-.navbar--links li {
+.navbar--links .li-link {
     text-decoration: none;
     margin: 0 10px;
+    color: #000;
+}
+
+.portfolio-link {
+    border-bottom: #000 2px solid;
+}
+
+.navbar--links .li-link:hover {
+    color: #0b2434;
+    border-bottom: #000 2px solid;
 }
