@@ -39,7 +39,34 @@ const Projects = () => {
     useEffect(() => {
         getRepos();
     }, []);
+    
 
+    // const handleShowMore = () => {
+    //     const diplayItems = githubRepo.slice(0, githubRepo.length);
+    //     setDisplayRepo(diplayItems);
+    // };
+
+
+    const handleNext = () => {
+        if(githubRepo.length > 3) {
+            const diplayItems = githubRepo.slice(3, githubRepo.length) + githubRepo.slice(0, 3);
+            setDisplayRepo(diplayItems);
+        } else {
+            const diplayItems = githubRepo.slice(0, 3);
+            setDisplayRepo(diplayItems);
+        } 
+
+    };
+
+    const handlePrev = () => {
+        if(githubRepo.length > 3) {
+            const diplayItems = githubRepo.slice(0, 3) - 3;
+            setDisplayRepo(diplayItems);
+        } else {
+            const diplayItems = githubRepo.slice(0, 3);
+            setDisplayRepo(diplayItems);
+        }
+    };
 
     useEffect(() => {
         fetch('https://api.github.com/users/tijani-zainab')
@@ -64,8 +91,8 @@ const Projects = () => {
                     {loading ? <h1>Loading...</h1> : displayRepo}
                 </div>
                 {/* {githubRepo}      */}
-                <button className='btn prev-btn'> Prev </button>
-                <button className='btn next-btn'> Next </button>
+                <button className='btn prev-btn' onClick={handlePrev}> Prev </button>
+                <button className='btn next-btn' onClick={handleNext}> Next </button>
             </div>
 
             <div className='projects-bottom'>
