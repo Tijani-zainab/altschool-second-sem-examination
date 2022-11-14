@@ -1,7 +1,18 @@
 import './Navbar.scss';
-import { Link } from 'react-router-dom';
+import { Twirl as Hamburger } from 'hamburger-react';
+import { HashLink } from 'react-router-hash-link';
+import { useState } from 'react';
 
 const Navbar = () => {
+
+    const [isOpen, setOpen] = useState(false);
+
+    let hashlinks = [
+        {to: '/#home', label: 'Home'},
+        {to: '/#about', label: 'About'},
+        {to: '/#projects', label: 'Projects'},
+    ]
+
     return (
         <div className='navbar'>
             <header className='header'> 
@@ -10,11 +21,18 @@ const Navbar = () => {
 
             <nav className='nav'>
                 <ul className='navbar--links'>
-                    <li> <Link className='li-link portfolio-link' to="portfolio">Portfolio</Link> </li>
-                    <li> <Link className='li-link' to="users">Users</Link> </li>
+                    {hashlinks.map((link, index) => {
+                        return (
+                            <li key={index}> <HashLink className='li-link' to={link.to}>{link.label}</HashLink> </li>
+                        )
+                    })}
+                        
                 </ul>
-
             </nav>
+
+            <div className='hamburger'>
+                <Hamburger size={20} toggled={isOpen} toggle={setOpen} />
+            </div>
 
         </div>
     );

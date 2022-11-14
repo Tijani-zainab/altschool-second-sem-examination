@@ -67,7 +67,7 @@ const Projects = () => {
     };
 
     return (
-        <div className='projects'>
+        <div className='projects' id='projects'>
 
             <p className='project-header'>
                 <h1>My Recent Completed Projects</h1>

@@ -26,11 +26,25 @@
     color: #000;
 }
 
-.portfolio-link {
-    border-bottom: #000 2px solid;
-}
-
 .navbar--links .li-link:hover {
     color: #0b2434;
     border-bottom: #000 2px solid;
+}
+
+.hamburger {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+   
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar--links {
+        display: none;
+    }
+
 }

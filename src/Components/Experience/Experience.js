@@ -7,27 +7,29 @@ const Experience = () => {
     const slideRef = useRef(null);
 
     const showSlides = () => {
-        let i;
-        let slides = slideRef.current;
-        console.log(slides);
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = 'none';
-        }
-        setSlideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = 'block';
-        setTimeout(showSlides, 2000); 
+        // let i;
+        // let slides = slideRef.current;
+        // console.log(slides);
+        // for (i = 0; i < slides.length; i++) {
+        //     slides[i].style.display = 'none';
+        // }
+        // slideIndex++;
+        // // if (slideIndex > slides.length) {slideIndex = 1}
+        // // slides[slideIndex-1].style.display = 'block';
+        // setTimeout(showSlides, 2000); 
 
     }
 
-    showSlides();
+    useEffect(() => {
+        showSlides();
+    }, []);
 
     return (
         <div className="experience">
             <h1 className='h1'>Experience</h1>
 
             <div className='slides-container'>
-                <div ref={slideRef} className='experience-years slides fade'>
+                <div ref={slideRef} className='experience-years fade'>
                     <h2>2019 - 2020</h2>
                     <p>@Wejapa </p>
                     <p>Lagos, Nigeria</p>
@@ -35,7 +37,7 @@ const Experience = () => {
 
                 </div>
 
-                <div ref={slideRef} className='experience-years slides fade'>
+                <div ref={slideRef} className='experience-years fade'>
                     <h2>2019 - 2020</h2>
                     <p>@Wejapa </p>
                     <p>Lagos, Nigeria</p>
@@ -43,7 +45,7 @@ const Experience = () => {
 
                 </div>
 
-                <div ref={slideRef} className='experience-years slides fade'>
+                <div ref={slideRef} className='experience-years fade'>
                     <h2>2019 - 2020</h2>
                     <p>@Wejapa </p>
                     <p>Lagos, Nigeria</p>
@@ -51,7 +53,7 @@ const Experience = () => {
 
                 </div>
 
-                <div style={{textAlign: 'center'}} className='dot-slide--continer'>
+                <div className='dot-slide--continer'>
                     <span className='dot'></span>
                     <span className='dot'></span>
                     <span className='dot'></span>
