@@ -6,7 +6,7 @@ const Routing = () => {
         <Routes>
             {/* <Route path='/' element={<Landing />} /> */}
             <Route path='/projects' element={<Projects />} />
-            <Route path='*' element={<NotFound />} />
+            {/* <Route path='*' element={<NotFound />} /> */}
         </Routes>
     );
 };
