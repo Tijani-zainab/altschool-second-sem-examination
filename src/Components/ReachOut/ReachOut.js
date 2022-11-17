@@ -18,9 +18,9 @@ const ReachOut = () => {
     }, []);
 
     return (
-        <div className='reachOut'>
+        <div className='reachOut-container'>
 
-            <div className='reachOut-container'>
+            <div className='reachOut'>
 
                 <div className='reachout-left__img'>
                     <img className='reachout-avater' src={avater} alt='avater' />
