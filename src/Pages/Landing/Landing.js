@@ -3,7 +3,7 @@ import { Navbar, Hero} from "../../Components";
 
 const Portfolio = () => {
     return (
-        <div className='Landing' id='home'>
+        <div className='Landing'>
             <Navbar />
             <Hero />
         </div>

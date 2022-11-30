@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // background-color:  #0058cc;
-    color: #0b2434;
-    padding: 10px 6%;
+    background-color:  #0d2c3f;
+    color: #fff;
+    padding: 20px 6%;
 }
 
 .header h1 {
@@ -23,12 +23,12 @@
 .navbar--links .li-link {
     text-decoration: none;
     margin: 0 10px;
-    color: #000;
+    color: #fff;
 }
 
 .navbar--links .li-link:hover {
-    color: #0b2434;
-    border-bottom: #000 2px solid;
+    color: #fff;
+    border-bottom: #fff 2px solid;
 }
 
 .hamburger {

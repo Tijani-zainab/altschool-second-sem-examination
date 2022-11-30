@@ -18,7 +18,7 @@ const ReachOut = () => {
     }, []);
 
     return (
-        <div className='reachOut-container'>
+        <div className='reachOut-container'>    
 
             <div className='reachOut'>
 

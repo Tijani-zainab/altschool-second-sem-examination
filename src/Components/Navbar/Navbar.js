@@ -1,17 +1,18 @@
 import './Navbar.scss';
 import { Twirl as Hamburger } from 'hamburger-react';
-import { HashLink } from 'react-router-hash-link';
+import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 const Navbar = () => {
 
     const [isOpen, setOpen] = useState(false);
 
-    let hashlinks = [
-        {to: '/#home', label: 'Home'},
-        {to: '/#about', label: 'About'},
-        {to: '/#projects', label: 'Projects'},
-    ]
+    let links = [
+        {to: '/', label: 'Home'},
+        {to: '/projects', label: 'Projects'},
+        {to: '/404', label: '404'},
+        {to: '/errorBoundary', label: 'Error Boundary'},
+    ];
 
     return (
         <div className='navbar'>
@@ -21,9 +22,9 @@ const Navbar = () => {
 
             <nav className='nav'>
                 <ul className='navbar--links'>
-                    {hashlinks.map((link, index) => {
+                    {links.map((link, index) => {
                         return (
-                            <li key={index}> <HashLink className='li-link' to={link.to}>{link.label}</HashLink> </li>
+                            <li key={index}> <NavLink className='li-link' to={link.to}>{link.label}</NavLink> </li>
                         )
                     })}
                         
