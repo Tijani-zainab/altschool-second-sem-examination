@@ -18,19 +18,21 @@ const ReachOut = () => {
     }, []);
 
     return (
-        <div className='reachOut-container'>    
+        <div className='reachOut-container'>   
+
+            <h1 className='reachout--text'>Reach out !</h1> 
 
             <div className='reachOut'>
 
                 <div className='reachout-left__img'>
                     <img className='reachout-avater' src={avater} alt='avater' />
-                    <h1>{githubUsername}</h1>
+                    {/* <h1>{githubUsername}</h1> */}
                 </div>
 
                 <div className='reachOut-right__text'>
                     <h1>Let's work together</h1>
                     <p>Have a project in mind? Let's talk about it.</p>
-                    <button className='btn contact-btn'>Contact Me</button>
+                    <button className='contact-btn'>Contact Me</button>
                 </div>
 
             </div>

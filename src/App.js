@@ -8,11 +8,11 @@ function App() {
     
       <div className="App">
         <ErrorBoundary>
-          <Landing />
-          <Projects />
-          <Experience />
-          <ReachOut />
-          <Footer />
+          {/* <Landing /> */}
+          {/* <Projects /> */}
+          {/* <Experience /> */}
+          {/* <ReachOut /> */}
+          {/* <Footer /> */}
           <Routing />
         </ErrorBoundary>
       </div>

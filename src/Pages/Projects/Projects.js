@@ -1,5 +1,6 @@
 import './Projects.scss';
 import { useEffect, useState } from 'react';
+import { Footer } from "../../Components";
 
 const Projects = () => {
 
@@ -82,7 +83,7 @@ const Projects = () => {
                 <button className='btn prev-btn' onClick={handlePrev}> Prev </button>
                 <button className='btn next-btn' onClick={handleNext}> Next </button>
             </div>
-
+        <Footer />
         </div>
     );
 }

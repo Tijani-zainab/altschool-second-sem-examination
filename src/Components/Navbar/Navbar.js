@@ -1,6 +1,6 @@
 import './Navbar.scss';
 import { Twirl as Hamburger } from 'hamburger-react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
                 <ul className='navbar--links'>
                     {links.map((link, index) => {
                         return (
-                            <li key={index}> <NavLink className='li-link' to={link.to}>{link.label}</NavLink> </li>
+                            <li key={index}> <Link className='li-link' to={link.to}>{link.label}</Link> </li>
                         )
                     })}
                         
