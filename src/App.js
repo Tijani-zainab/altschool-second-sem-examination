@@ -1,9 +1,9 @@
 import './App.scss';
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
-import { Landing, Projects } from "././Pages";
-import { Routing, Experience, ReachOut, Footer } from "./Components";
+// import { Landing, Projects } from "././Pages";
+import { Routing } from "./Components";
 
-function App() {
+const App = () => {
   return (
     
       <div className="App">
