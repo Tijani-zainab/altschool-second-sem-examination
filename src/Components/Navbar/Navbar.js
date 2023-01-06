@@ -2,6 +2,7 @@ import './Navbar.scss';
 import { Twirl as Hamburger } from 'hamburger-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+// import { DisplayMenu } from '../index';
 
 const Navbar = () => {
 
@@ -35,8 +36,20 @@ const Navbar = () => {
             </nav>
 
             <div className='hamburger'>
-                <Hamburger size={20} toggled={isOpen} toggle={setOpen} />
+                <Hamburger size={20} toggled={isOpen} toggle={setOpen} onClick={() => setOpen(prev => !prev)}/>
             </div>
+
+            {isOpen && (
+                <div className='display-menu'>
+                    <div className='display-menu--links'>
+                        {links.map((link, index) => (
+                            <a key={index} href={link.to} onClick={() => setOpen(false)}>
+                                {link.label}
+                            </a>
+                        ))}
+                    </div>
+              </div>
+            )}
 
         </div>
     );
