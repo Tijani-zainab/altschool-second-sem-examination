@@ -5,3 +5,13 @@
 body {
   font-family: 'Karla', sans-serif;
 }
+
+.particles-container {
+  position: relative;
+  z-index: 0;
+}
+
+.components-containter {
+  position: absolute;
+  z-index: 1;
+}

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout, Landing, NotFound, Projects } from '../../Pages';
-import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary';
+import TestErrorBoundary from '../TestErrorBoundary/TestErrorBoundary';
 
 const Routing = () => {
     return (
@@ -9,7 +9,7 @@ const Routing = () => {
                 <Route index element={<Landing />} />
                 <Route path='/projects' element={<Projects />} />
                 <Route path="*" element={<NotFound />} />
-                <Route path='/errorBoundary' element={<ErrorBoundary />} />
+                <Route path='/testErrorBoundary' element={<TestErrorBoundary />} />
             </Route>
         </Routes>
     );

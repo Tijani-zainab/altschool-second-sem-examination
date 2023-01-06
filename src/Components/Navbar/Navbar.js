@@ -11,7 +11,7 @@ const Navbar = () => {
         {to: '/', label: 'Home'},
         {to: '/projects', label: 'Projects'},
         {to: '/404', label: '404'},
-        {to: '/errorBoundary', label: 'Error Boundary'},
+        {to: '/testErrorBoundary', label: 'Test Error'},
     ];
 
     return (
