@@ -5,3 +5,4 @@ export { default as Footer } from './Footer/Footer';
 export { default as ReachOut } from './ReachOut/ReachOut';
 export { default as Experience } from './Experience/Experience';
 export { default as TestErrorBoundary } from './TestErrorBoundary/TestErrorBoundary';
+export { default as DisplayMenu } from './DisplayMenu/DisplayMenu';

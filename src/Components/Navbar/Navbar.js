@@ -17,8 +17,11 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <header className='header'> 
-                <h1>Jani.Co</h1> 
+                <a href='/' className='header-link'>
+                    <h1>Zainab</h1> 
+                </a>
             </header>
+
 
             <nav className='nav'>
                 <ul className='navbar--links'>

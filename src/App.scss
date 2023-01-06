@@ -3,15 +3,15 @@
 }
 
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .particles-container {
-  position: relative;
+  position: absolute;
   z-index: 0;
 }
 
 .components-containter {
-  position: absolute;
+  position: relative;
   z-index: 1;
 }

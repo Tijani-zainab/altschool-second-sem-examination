@@ -1,9 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout, Landing, NotFound, Projects } from '../../Pages';
-import TestErrorBoundary from '../TestErrorBoundary/TestErrorBoundary';
+import {TestErrorBoundary, DisplayMenu} from '../../Components';
+import { useState } from 'react';
 
 const Routing = () => {
+
+    const [isOpen, setOpen] = useState(false);
+
     return (
+        <div>
         <Routes>
             <Route path='/' element={<Layout />}>
                 <Route index element={<Landing />} />
@@ -12,6 +17,8 @@ const Routing = () => {
                 <Route path='/testErrorBoundary' element={<TestErrorBoundary />} />
             </Route>
         </Routes>
+        <DisplayMenu isOpen={isOpen} />
+        </div>
     );
 };
 
