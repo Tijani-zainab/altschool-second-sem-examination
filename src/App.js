@@ -10,6 +10,12 @@ const App = () => {
 
   const options = {
     preset: "stars",
+    Animation: {
+      enable: true,
+      speed: 30,
+      minimumValue: 0.1,
+      sync: false,
+    },
   };
 
   const initialize = (instance) => {
