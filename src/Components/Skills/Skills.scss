@@ -1,0 +1,27 @@
+.skills {
+    padding: 2rem 0;
+    color: #fff;
+    text-align: left;
+    margin: 0 auto; 
+    max-width: 54rem;
+}
+
+.skills h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ffcc00;
+    border-bottom: #ffcc00 2px solid;
+}
+
+.skills--list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: square;
+}
+
+.skills--list li {
+    // color: #ffcc00;
+}
+
+

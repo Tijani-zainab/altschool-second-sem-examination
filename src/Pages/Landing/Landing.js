@@ -1,11 +1,13 @@
 import './Landing.scss';
-import { Hero, ReachOut, Footer} from "../../Components";
+import { Hero, Contact, About, Skills, Footer} from "../../Components";
 
 const Portfolio = () => {
     return (
         <div className='Landing'>
             <Hero />
-            <ReachOut />
+            <About />
+            <Skills />
+            <Contact />
             <Footer />
         </div>
     );
