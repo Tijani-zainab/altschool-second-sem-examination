@@ -20,8 +20,9 @@
     list-style: square;
 }
 
-.skills--list li {
-    // color: #ffcc00;
+@media screen and (max-width: 768px) {
+    .skills {
+        padding: 2rem;
+    }
 }
-
 

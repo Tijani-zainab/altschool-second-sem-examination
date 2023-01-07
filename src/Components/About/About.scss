@@ -12,3 +12,9 @@
     color: #ffcc00;
     border-bottom: #ffcc00 2px solid;
 }
+
+@media screen and (max-width: 768px) {
+    .about {
+        padding: 2rem;
+    }
+}
