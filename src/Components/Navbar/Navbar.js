@@ -1,19 +1,30 @@
 import './Navbar.scss';
 import { Twirl as Hamburger } from 'hamburger-react';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-// import { DisplayMenu } from '../index';
+import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
 
     const [isOpen, setOpen] = useState(false);
 
-    let links = [
+    const [links, setLinks] = useState([
         {to: '/', label: 'Home'},
         {to: '/projects', label: 'Projects'},
         {to: '/404', label: '404'},
         {to: '/testErrorBoundary', label: 'Test Error'},
-    ];
+    ]);
+
+    //returns the location object for the current route
+    const location = useLocation();
+
+    useEffect(() => {
+        setLinks(prevLinks => prevLinks.map(link => ({
+            ...link,
+            className: link.to === location.pathname ? 'selected' : ''
+        })));
+
+    }, [location])
+            
 
     return (
         <div className='navbar'>
@@ -28,7 +39,7 @@ const Navbar = () => {
                 <ul className='navbar--links'>
                     {links.map((link, index) => {
                         return (
-                            <li key={index}> <Link className='li-link' to={link.to}>{link.label}</Link> </li>
+                            <li key={index} className={link.className}> <Link className='li-link' to={link.to}>{link.label}</Link> </li>
                         )
                     })}
                         
@@ -41,13 +52,18 @@ const Navbar = () => {
 
             {isOpen && (
                 <div className='display-menu'>
-                    <div className='display-menu--links'>
+                    <ul className='display-menu--links'>
                         {links.map((link, index) => (
-                            <a key={index} href={link.to} onClick={() => setOpen(false)}>
-                                {link.label}
-                            </a>
+                            // <a key={index} style={link.style} href={link.to} onClick={() => setOpen(false)}>
+                            //     {link.label}
+                            // </a>
+                            <li key={index} className={link.className}> 
+                                <Link className='li-link' to={link.to} onClick={() => setOpen(false)}>
+                                    {link.label}
+                                </Link> 
+                            </li>
                         ))}
-                    </div>
+                    </ul>
               </div>
             )}
 
