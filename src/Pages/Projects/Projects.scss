@@ -1,5 +1,6 @@
 .projects {
     color: #fff;
+    text-align: center;
 }
 
 .project-header {
@@ -8,6 +9,10 @@
     margin: 4rem 0;
     padding: 0 17% 5% 17%;
     letter-spacing: 1px;
+}
+
+.projects--main {
+    margin: 3rem 0;
 }
 
 .repo {
@@ -36,11 +41,6 @@
     color: #000;
     background-color: #fff;
 }
-
-.projects {
-    text-align: center;
-}
-
 
 .projects--main--top {
     display: flex;
