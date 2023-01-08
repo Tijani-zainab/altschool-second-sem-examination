@@ -1,9 +1,11 @@
 .test-error-boundary {
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #ffcc00;
   border-radius: 4px;
-  background-color: #f9f9f9;
+  background-color: #ffcc00;
   margin-bottom: 1rem;
+  max-width: 54rem;
+  margin: 4rem auto;
 }
 
 .error-btn, .back-btn {
@@ -13,4 +15,15 @@
   border-radius: 4px;
   background-color: #f9f9f9;
   cursor: pointer;
+}
+
+.error-btn:hover, .back-btn:hover {
+  background-color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .test-error-boundary {
+    padding: 1rem;
+    margin: 4rem 1rem;
+  }
 }

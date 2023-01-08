@@ -7,3 +7,4 @@ export { default as Experience } from './Experience/Experience';
 export { default as TestErrorBoundary } from './TestErrorBoundary/TestErrorBoundary';
 export { default as About } from './About/About';
 export { default as Skills } from './Skills/Skills';
+export { default as Blog } from './Blog/Blog';

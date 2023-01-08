@@ -1,22 +1,23 @@
 .not-found-page {
-    margin: 0 auto;
-    padding: 10% 8% 10% 7.5%;
-    color: #0b2434;
+    
+    padding: 6rem 7rem;
+    // max-width: 54rem;
+    color: #fff;
     text-align: center;
 }
 
 .not-found-desc {
-    -webkit-box-shadow: 1px 3px 21px -2.5px #dddddd;
-    -moz-box-shadow: 1px 3px 21px -2.5px #dddddd;
-    box-shadow: 1px 3px 21px -2.5px #dddddd;
-    padding: 30px 40px;
-    border: 1px solid #dddddd;
+    background-color: rgba(255, 255, 255, 0.13);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    margin: 0 auto;
     border-radius: 7px;
+    padding: 4rem;
 }
 
 
 @media (max-width: 768px) {
     .not-found-page {
-        padding: 3% 8% 50px 7.5%;
+        padding: 5rem 2rem;
     }
 }

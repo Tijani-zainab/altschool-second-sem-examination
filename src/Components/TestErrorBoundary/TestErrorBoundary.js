@@ -12,10 +12,10 @@ const TestErrorBoundary = () => {
     return (
         <div className="test-error-boundary">
             <h1>Test Error Boundary</h1>
-            <button className="error-btn" onClick={() => setError(true)}>
+            <button className="error-btn btn" onClick={() => setError(true)}>
                 Throw Error
             </button>
-            <Link className="back-btn" to="/">
+            <Link className="back-btn btn" to="/">
                 Back
             </Link>
         </div>

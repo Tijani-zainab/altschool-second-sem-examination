@@ -1,5 +1,5 @@
 import './Landing.scss';
-import { Hero, Contact, About, Skills, Footer} from "../../Components";
+import { Hero, Contact, About, Skills, Blog, Footer} from "../../Components";
 
 const Portfolio = () => {
     return (
@@ -8,6 +8,7 @@ const Portfolio = () => {
             <About />
             <Skills />
             <Contact />
+            {/* <Blog /> */}
             <Footer />
         </div>
     );
