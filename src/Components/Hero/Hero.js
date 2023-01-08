@@ -11,7 +11,7 @@ const Hero = () => {
                 <p className='hero-desc'> Welcome friends! This collection is of projects, designs, creation and articles. take a little tour and enjoy the ride. </p>
 
                 <button className='btn hire-me-btn'>
-                    <a href='/projects'>Hire Me</a>
+                    <a href='/'>Hire Me</a>
                 </button>
             </div>
 
