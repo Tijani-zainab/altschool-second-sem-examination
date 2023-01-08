@@ -24,7 +24,7 @@ const Blog = () => {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer 171daf3d-0f6b-4b75-821a-96502891eafb',
+                'Authorization': 'Bearer API_KEY',
                 },
         
                 body: JSON.stringify({ query }),
@@ -63,6 +63,3 @@ const Blog = () => {
 
 
 export default Blog;
-
-// api key
-// 171daf3d-0f6b-4b75-821a-96502891eafb
