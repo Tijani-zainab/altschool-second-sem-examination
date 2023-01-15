@@ -2,59 +2,57 @@ import React from "react";
 import "./Blog.scss";
 import { useState, useEffect } from "react";
 
+
 const Blog = () => {
 
-    const API_URL = 'https://api.hashnode.com/';
+    const [posts, setPosts] = useState([]);
 
-    const getBlogPosts = async () => {
-        try {
-            const query = `
-                query {
-                blogs(username: "Janitijj") {
+    const query = `
+        query {
+            user(username: "Janitijj") {
+                publication {
                     posts {
-                    title
-                    coverImage
-                    excerpt
+                        title
+                        coverImage
+                        excerpt
                     }
                 }
-                }
-            `;
-        
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer API_KEY',
-                },
-        
-                body: JSON.stringify({ query }),
-            });
-        
-        const data = await response.json();
-            return data.data.blogs.posts;
-        } catch (error) {
-            console.error(error);
+            }
         }
+        `;
 
+
+    useEffect(() => {
+        fetchPosts();
+    }, []);
+
+
+    const fetchPosts = async () => {
+
+        const response = await fetch("https://api.hashnode.com", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+            "Authorization": "Bearer ce8fa49f-43e6-4aff-8af3-3d888fc4531f ",
+          },
+          body: JSON.stringify({ query }),
+        });
+    
+        const data = await response.json();
+        console.log(data);
+        setPosts(data.data.user.publication.posts);
+        // console.log(data.data.user.publication.posts);
     };
 
 
-    const [blogs, setBlogs] = useState([]);
-
-    useEffect(() => {
-        getBlogPosts().then((blogs) => {
-            setBlogs(blogs)
-        });
-    }, []);
-
     return (
-        <div className="blog">
-            <h1>Blog</h1>
-            {blogs.map(blog => (
+        <div>
+            <h1>Hashnode api</h1>
+            {posts.map((post) => (
                 <div>
-                    <h2>{blog.title}</h2>
-                    <img src={blog.coverImage} alt={blog.title} />
-                    <p>{blog.excerpt}</p>
+                    <h2>{post.title}</h2>
+                    <img src={post.coverImage} alt={post.title} />
+                    <p>{post.excerpt}</p>
                 </div>
             ))}
         </div>
@@ -63,3 +61,5 @@ const Blog = () => {
 
 
 export default Blog;
+
+//75c8d714-2da6-42c6-a67e-c2b0d4fe225b
