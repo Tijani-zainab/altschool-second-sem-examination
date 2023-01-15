@@ -59,6 +59,7 @@ const Blog = () => {
                         <img className="cover-image" src={post.coverImage} alt={post.title} />
                         <h2>{post.title}</h2>
                         <p>{post.brief}</p>
+                        <a href={`https://zainab-tijani.hashnode.dev//${post.slug}`} target="_blank" rel="noreferrer">Read More</a>
                     </div>
                 ))}
             </div>
