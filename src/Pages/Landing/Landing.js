@@ -7,8 +7,8 @@ const Portfolio = () => {
             <Hero />
             <About />
             <Skills />
-            <Contact />
             <Blog />
+            <Contact />
             <Footer />
         </div>
     );

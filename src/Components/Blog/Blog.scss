@@ -1,14 +1,47 @@
 .blog {
     padding: 2rem 0;
     color: #fff;
-    text-align: left;
-    margin: 0 auto; 
-    max-width: 54rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    // margin: 0 auto; 
+    // max-width: 54rem;
 }
 
-.blog h1 {
-    font-size: 3rem;
+.blog-post {
+    width: 30%;
+    margin: 2%;
+}
+
+.blog .cover-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.blog h2 {
+    font-size: 1.5rem;
     font-weight: 600;
     color: #ffcc00;
-    border-bottom: #ffcc00 2px solid;
+    // border-bottom: #ffcc00 2px solid;
+}
+
+.blog p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .blog {
+        padding: 2rem;
+    }
+
+    .blog-post {
+        width: 100%;
+        margin-right: 0;
+    }
 }

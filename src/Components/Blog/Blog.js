@@ -10,13 +10,16 @@ const Blog = () => {
     const query = `
         query {
             user(username: "Janitijj") {
-                publication {
-                    posts {
-                        title
-                        coverImage
-                        excerpt
-                    }
+            publication {
+                posts(page:0){
+                slug
+                title
+                brief
+                coverImage
+                cuid
+                _id
                 }
+            }
             }
         }
         `;
@@ -33,7 +36,7 @@ const Blog = () => {
           method: "POST",
           headers: {
             "Content-type": "application/json",
-            "Authorization": "Bearer ce8fa49f-43e6-4aff-8af3-3d888fc4531f ",
+            // "Authorization": "Bearer ce8fa49f-43e6-4aff-8af3-3d888fc4531f ",
           },
           body: JSON.stringify({ query }),
         });
@@ -41,18 +44,17 @@ const Blog = () => {
         const data = await response.json();
         console.log(data);
         setPosts(data.data.user.publication.posts);
-        // console.log(data.data.user.publication.posts);
+        console.log(data.data.user.publication.posts);
     };
 
 
     return (
-        <div>
-            <h1>Hashnode api</h1>
+        <div className="blog">
             {posts.map((post) => (
-                <div>
+                <div className="blog-post">
+                    <img className="cover-image" src={post.coverImage} alt={post.title} />
                     <h2>{post.title}</h2>
-                    <img src={post.coverImage} alt={post.title} />
-                    <p>{post.excerpt}</p>
+                    <p>{post.brief}</p>
                 </div>
             ))}
         </div>
