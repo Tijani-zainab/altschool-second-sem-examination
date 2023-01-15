@@ -42,21 +42,26 @@ const Blog = () => {
         });
     
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setPosts(data.data.user.publication.posts);
-        console.log(data.data.user.publication.posts);
+        // console.log(data.data.user.publication.posts);
     };
 
 
     return (
         <div className="blog">
-            {posts.map((post) => (
-                <div className="blog-post">
-                    <img className="cover-image" src={post.coverImage} alt={post.title} />
-                    <h2>{post.title}</h2>
-                    <p>{post.brief}</p>
-                </div>
-            ))}
+
+            <h1 className="blog-header">Blog</h1>
+
+            <div className="blog-posts">
+                {posts.map((post) => (
+                    <div className="blog-post">
+                        <img className="cover-image" src={post.coverImage} alt={post.title} />
+                        <h2>{post.title}</h2>
+                        <p>{post.brief}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

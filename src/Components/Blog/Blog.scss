@@ -1,12 +1,21 @@
 .blog {
-    padding: 2rem 0;
     color: #fff;
+    // margin: 0 auto; 
+    // max-width: 54rem;
+}
+
+.blog-header {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ffcc00;
+    margin-left: 13rem;
+}
+
+.blog-posts {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    // margin: 0 auto; 
-    // max-width: 54rem;
 }
 
 .blog-post {
@@ -38,6 +47,11 @@
 
     .blog {
         padding: 2rem;
+        margin: 0;
+    }
+
+    .blog-header {
+        margin-left: 0;
     }
 
     .blog-post {
