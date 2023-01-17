@@ -59,7 +59,7 @@ const Blog = () => {
                         <img className="cover-image" src={post.coverImage} alt={post.title} />
                         <h2>{post.title}</h2>
                         <p>{post.brief}</p>
-                        <a href={`https://zainab-tijani.hashnode.dev//${post.slug}`} target="_blank" rel="noreferrer">Read More</a>
+                        <a className="readmore" href={`https://zainab-tijani.hashnode.dev//${post.slug}`} target="_blank" rel="noreferrer">Read More</a>
                     </div>
                 ))}
             </div>
@@ -70,4 +70,3 @@ const Blog = () => {
 
 export default Blog;
 
-//75c8d714-2da6-42c6-a67e-c2b0d4fe225b
