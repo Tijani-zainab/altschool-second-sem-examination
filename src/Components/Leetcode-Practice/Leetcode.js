@@ -121,3 +121,187 @@ const addTwoNumbers = (l1, l2) => {
         return (reversed > 2147483647 || reversed < -2147483648) ? 0 : reversed;
     };
 
+
+//4
+
+// Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
+
+// A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
+
+// Example 1:
+
+// Input: digits = "23"
+// Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+// Example 2:
+
+// Input: digits = ""
+// Output: []
+// Example 3:
+
+// Input: digits = "2"
+// Output: ["a","b","c"]
+ 
+
+// Constraints:
+
+// 0 <= digits.length <= 4
+// digits[i] is a digit in the range ['2', '9']. 
+
+
+const letterCombinations = (digits) => { 
+    const map = {
+        2: 'abc',
+        3: 'def',
+        4: 'ghi',
+        5: 'jkl',
+        6: 'mno',
+        7: 'pqrs',
+        8: 'tuv',
+        9: 'wxyz'
+    }
+    const result = [];
+    const dfs = (index, str) => {
+        if (index === digits.length) {
+            result.push(str);
+            return;
+        }
+        const letters = map[digits[index]];
+        for (let i = 0; i < letters.length; i++) {
+            dfs(index + 1, str + letters[i]);
+        }
+    }
+    if (digits.length !== 0) {
+        dfs(0, '');
+    }
+    return result;
+};
+
+//5
+
+// Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+
+// Notice that the solution set must not contain duplicate triplets.
+
+ 
+
+// Example 1:
+
+// Input: nums = [-1,0,1,2,-1,-4]
+// Output: [[-1,-1,2],[-1,0,1]]
+// Explanation: 
+// nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+// nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+// nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+// The distinct triplets are [-1,0,1] and [-1,-1,2].
+// Notice that the order of the output and the order of the triplets does not matter.
+// Example 2:
+
+// Input: nums = [0,1,1]
+// Output: []
+// Explanation: The only possible triplet does not sum up to 0.
+// Example 3:
+
+// Input: nums = [0,0,0]
+// Output: [[0,0,0]]
+// Explanation: The only possible triplet sums up to 0.
+ 
+
+// Constraints:
+
+// 3 <= nums.length <= 3000
+// -105 <= nums[i] <= 105
+
+const threeSum = (nums) => { 
+    const result = [];
+    nums.sort((a, b) => a - b);
+    for (let i = 0; i < nums.length; i++) {
+        if (i > 0 && nums[i] === nums[i - 1]) {
+            continue;
+        }
+        let left = i + 1;
+        let right = nums.length - 1;
+        while (left < right) {
+            const sum = nums[i] + nums[left] + nums[right];
+            if (sum === 0) {
+                result.push([nums[i], nums[left], nums[right]]);
+                left++;
+                right--;
+                while (left < right && nums[left] === nums[left - 1]) {
+                    left++;
+                }
+                while (left < right && nums[right] === nums[right + 1]) {
+                    right--;
+                }
+            } else if (sum < 0) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+    }
+    return result;
+};
+
+//6
+
+// Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:
+
+// 0 <= a, b, c, d < n
+// a, b, c, and d are distinct.
+// nums[a] + nums[b] + nums[c] + nums[d] == target
+// You may return the answer in any order.
+
+ 
+
+// Example 1:
+
+// Input: nums = [1,0,-1,0,-2,2], target = 0
+// Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
+// Example 2:
+
+// Input: nums = [2,2,2,2,2], target = 8
+// Output: [[2,2,2,2]]
+ 
+
+// Constraints:
+
+// 1 <= nums.length <= 200
+// -109 <= nums[i] <= 109
+// -109 <= target <= 109 
+
+const fourSum = (nums, target) => {
+    const result = [];
+    nums.sort((a, b) => a - b);
+    for (let i = 0; i < nums.length; i++) {
+        if (i > 0 && nums[i] === nums[i - 1]) {
+            continue;
+        }
+        for (let j = i + 1; j < nums.length; j++) {
+            if (j > i + 1 && nums[j] === nums[j - 1]) {
+                continue;
+            }
+            let left = j + 1;
+            let right = nums.length - 1;
+            while (left < right) {
+                const sum = nums[i] + nums[j] + nums[left] + nums[right];
+                if (sum === target) {
+                    result.push([nums[i], nums[j], nums[left], nums[right]]);
+                    left++;
+                    right--;
+                    while (left < right && nums[left] === nums[left - 1]) {
+                        left++;
+                    }
+                    while (left < right && nums[right] === nums[right + 1]) {
+                        right--;
+                    }
+                } else if (sum < target) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+    }
+    return result;
+};
+
