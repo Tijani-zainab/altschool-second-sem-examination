@@ -305,3 +305,214 @@ const fourSum = (nums, target) => {
     return result;
 };
 
+//7
+
+// Write a function to find the longest common prefix string amongst an array of strings.
+
+// If there is no common prefix, return an empty string "".
+
+ 
+
+// Example 1:
+
+// Input: strs = ["flower","flow","flight"]
+// Output: "fl"
+// Example 2:
+
+// Input: strs = ["dog","racecar","car"]
+// Output: ""
+// Explanation: There is no common prefix among the input strings.
+ 
+
+// Constraints:
+
+// 1 <= strs.length <= 200
+// 0 <= strs[i].length <= 200
+// strs[i] consists of only lowercase English letters.
+
+const longestCommonPrefix = (strs) => {
+    if (strs.length === 0) {
+        return '';
+    }
+    let prefix = strs[0];
+    for (let i = 1; i < strs.length; i++) {
+        while (strs[i].indexOf(prefix) !== 0) {
+            prefix = prefix.substring(0, prefix.length - 1);
+            if (prefix.length === 0) {
+                return '';
+            }
+        }
+    }
+    return prefix;
+};
+
+//8
+
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+// An input string is valid if:
+
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+// Every close bracket has a corresponding open bracket of the same type.
+ 
+
+// Example 1:
+
+// Input: s = "()"
+// Output: true
+// Example 2:
+
+// Input: s = "()[]{}"
+// Output: true
+// Example 3:
+
+// Input: s = "(]"
+// Output: false
+ 
+
+// Constraints:
+
+// 1 <= s.length <= 104
+// s consists of parentheses only '()[]{}'.
+
+const isValid = (s) => {
+    const stack = [];
+    const map = {
+        '(': ')',
+        '{': '}',
+        '[': ']',
+    };
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === '(' || s[i] === '{' || s[i] === '[') {
+            stack.push(s[i]);
+        } else {
+            const last = stack.pop();
+            if (s[i] !== map[last]) {
+                return false;
+            }
+        }
+    }
+    return stack.length === 0;
+};
+
+//9
+// Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
+
+// Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+
+// Return k after placing the final result in the first k slots of nums.
+
+// Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
+
+// Custom Judge:
+
+// The judge will test your solution with the following code:
+
+// int[] nums = [...]; // Input array
+// int[] expectedNums = [...]; // The expected answer with correct length
+
+// int k = removeDuplicates(nums); // Calls your implementation
+
+// assert k == expectedNums.length;
+// for (int i = 0; i < k; i++) {
+//     assert nums[i] == expectedNums[i];
+// }
+// If all assertions pass, then your solution will be accepted.
+
+ 
+
+// Example 1:
+
+// Input: nums = [1,1,2]
+// Output: 2, nums = [1,2,_]
+// Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+// It does not matter what you leave beyond the returned k (hence they are underscores).
+// Example 2:
+
+// Input: nums = [0,0,1,1,1,2,2,3,3,4]
+// Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+// Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+// It does not matter what you leave beyond the returned k (hence they are underscores).
+ 
+
+// Constraints:
+
+// 1 <= nums.length <= 3 * 104
+// -100 <= nums[i] <= 100
+// nums is sorted in non-decreasing order.
+
+const removeDuplicates = (nums) => {
+    let i = 0;
+    for (let j = 1; j < nums.length; j++) {
+        if (nums[i] !== nums[j]) {
+            i++;
+            nums[i] = nums[j];
+        }
+    }
+    return i + 1;
+};
+
+//10
+
+// Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
+
+// Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+
+// Return k after placing the final result in the first k slots of nums.
+
+// Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
+
+// Custom Judge:
+
+// The judge will test your solution with the following code:
+
+// int[] nums = [...]; // Input array
+// int val = ...; // Value to remove
+// int[] expectedNums = [...]; // The expected answer with correct length.
+//                             // It is sorted with no values equaling val.
+
+// int k = removeElement(nums, val); // Calls your implementation
+
+// assert k == expectedNums.length;
+// sort(nums, 0, k); // Sort the first k elements of nums
+// for (int i = 0; i < actualLength; i++) {
+//     assert nums[i] == expectedNums[i];
+// }
+// If all assertions pass, then your solution will be accepted.
+
+ 
+
+// Example 1:
+
+// Input: nums = [3,2,2,3], val = 3
+// Output: 2, nums = [2,2,_,_]
+// Explanation: Your function should return k = 2, with the first two elements of nums being 2.
+// It does not matter what you leave beyond the returned k (hence they are underscores).
+// Example 2:
+
+// Input: nums = [0,1,2,2,3,0,4,2], val = 2
+// Output: 5, nums = [0,1,4,0,3,_,_,_]
+// Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
+// Note that the five elements can be returned in any order.
+// It does not matter what you leave beyond the returned k (hence they are underscores).
+ 
+
+// Constraints:
+
+// 0 <= nums.length <= 100
+// 0 <= nums[i] <= 50
+// 0 <= val <= 100
+
+const removeElement = (nums, val) => { 
+    let i = 0;
+    for (let j = 0; j < nums.length; j++) {
+        if (nums[j] !== val) {
+            nums[i] = nums[j];
+            i++;
+        }
+    }
+    return i;
+};
+
+//11
