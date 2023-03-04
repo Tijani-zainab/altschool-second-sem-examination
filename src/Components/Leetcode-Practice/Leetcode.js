@@ -25,11 +25,11 @@
 
 // -231 <= x <= 231 - 1
 
-const isPalindrome = (x) => {
-    const xString = x.toString();
-    const xStringReversed = xString.split('').reverse().join('');
-    return xString === xStringReversed;
-};
+// const isPalindrome = (x) => {
+//     const xString = x.toString();
+//     const xStringReversed = xString.split('').reverse().join('');
+//     return xString === xStringReversed;
+// };
 
 
 //2
